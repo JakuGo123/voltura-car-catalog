@@ -1,0 +1,79 @@
+[
+	{
+		"id": 1,
+		"model": "Voltura ZX 2025",
+		"price": 149900,
+		"type": "Sedan",
+		"versions": ["basic", "sport", "performance"],
+		"colors": [
+			{ "value": "#2C3E50", "name": "Butelkowa Zieleń" },
+			{ "value": "#F3F4F6", "name": "Biały Perłowy" },
+			{ "value": "#1F2937", "name": "Grafitowy" }
+		],
+		"additional": ["Koła zimowe", "Akcesoria"],
+		"features": {
+			"acceleration": 8.5,
+			"range": 350,
+			"maxSpeed": 160,
+			"chargingSpeed": 45,
+			"bootCapacity": 420,
+			"warranty": 5
+		},
+		"drive": "AWD",
+		"previewImage": "/cars/VolturaZX.png",
+		"images": [
+			"/cars/VolturaZXImage0.svg",
+			"/cars/VolturaImage1.svg",
+			"/cars/VolturaImage2.svg",
+			"/cars/VolturaImage3.svg"
+		]
+	},
+	{
+		"id": 2,
+		"model": "Voltura PX 2025",
+		"price": 229900,
+		"type": "Coupe",
+		"versions": ["basic", "sport", "performance"],
+		"colors": [
+			{ "value": "#2C3E50", "name": "Butelkowa Zieleń" },
+			{ "value": "#F3F4F6", "name": "Biały Perłowy" },
+			{ "value": "#1F2937", "name": "Grafitowy" }
+		],
+		"additional": ["Koła zimowe", "Akcesoria"],
+		"features": {
+			"acceleration": 8.5,
+			"range": 450,
+			"maxSpeed": 220,
+			"chargingSpeed": 75,
+			"bootCapacity": 380,
+			"warranty": 6
+		},
+		"drive": "AWD",
+		"previewImage": "/cars/VolturaPX.png",
+		"images": ["/cars/VolturaPX.png", "/cars/VolturaImage1.png", "/cars/VolturaImage2.png", "/cars/VolturaImage3.png"]
+	},
+	{
+		"id": 3,
+		"model": "Voltura SX 2025",
+		"price": 319900,
+		"type": "Sedan",
+		"versions": ["basic", "sport", "performance"],
+		"colors": [
+			{ "value": "#2C3E50", "name": "Butelkowa Zieleń" },
+			{ "value": "#F3F4F6", "name": "Biały Perłowy" },
+			{ "value": "#1F2937", "name": "Grafitowy" }
+		],
+		"additional": ["Koła zimowe", "Akcesoria"],
+		"features": {
+			"acceleration": 8.5,
+			"range": 520,
+			"maxSpeed": 260,
+			"chargingSpeed": 150,
+			"bootCapacity": 400,
+			"warranty": 8
+		},
+		"drive": "AWD",
+		"previewImage": "/cars/VolturaSX.png",
+		"images": ["/cars/VolturaSX.png", "/cars/VolturaImage1.png", "/cars/VolturaImage2.png", "/cars/VolturaImage3.png"]
+	}
+]

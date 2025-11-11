@@ -1,0 +1,39 @@
+{
+	"hero_section": {
+		"title": "Moc spotyka efektywność",
+		"subtitle": "Odkryj nową linię Voltura e-Line – zaprojektowaną z myślą o mieście i długich trasach",
+		"content": "Voltura e-Line to zupełnie nowa generacja samochodów elektrycznych, łączących dynamiczne osiągi z wyjątkową energooszczędnością. Zaprojektowana w oparciu o najnowsze technologie, oferuje nie tylko imponujący zasięg, ale też komfort jazdy na najwyższym poziomie.Nowoczesne systemy wspomagania kierowcy sprawiają, że każda podróż staje się bezpieczniejsza i bardziej intuicyjna.Elegancka sylwetka i dopracowane detale nadwozia podkreślają charakter premium marki Voltura.",
+		"content2": "",
+		"button": "Sprawdź szczegóły"
+	},
+	"filter": {
+		"title": "Gama naszych samochodów",
+		"button": "Filtruj"
+	},
+	"call_to_action": {
+		"title": "Poczuj przyszłość jazdy z Voltura",
+		"button": "Umów się na jazdę próbną"
+	},
+	"about_voltura": {
+		"title": "Gama naszych samochodów",
+		"content": "Voltura oferuje rozwiązania flotowe i korporacyjne, które łączą oszczędności z nowoczesnym wizerunkiem.",
+		"content2": "Nasze samochody elektryczne sprawdzają się zarówno w dużych flotach, jak i w małych firmach, dla których liczy się ekonomia, niezawodność i troska o środowisko.",
+		"accordion_faq": [
+			{
+				"question": "Jakie korzyści daje flota elektryczna Voltura?",
+				"answer": "Niższe koszty eksploatacji, prosta obsługa serwisowa i wizerunek marki dbającej o środowisko."
+			},
+			{
+				"question": "Czy samochody Voltura sprawdzą się w trasach długodystansowych?",
+				"answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum, accusantium."
+			},
+			{
+				"question": "Jakie wsparcie serwisowe oferujecie dla flot?",
+				"answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum, accusantium."
+			}
+		]
+	},
+	"bottom_banner": {
+		"title": "Postaw na innowację. Postaw na Voltura."
+	}
+}
