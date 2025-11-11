@@ -1,13 +1,14 @@
 # Voltura Car Catalog
 
-Aplikacja webowa do przeglądania i filtrowania katalogu samochodów elektrycznych Voltura.
+Zadanie rekrutacyjne.
 
 ## Technologie
 
 - Vue 3 (Composition API)
 - TypeScript
 - Vite
-- CSS (bez frameworków)
+- Bootstrap 5
+- CSS
 
 ## Wymagania
 
@@ -17,12 +18,14 @@ Aplikacja webowa do przeglądania i filtrowania katalogu samochodów elektryczny
 ## Instalacja
 
 1. Sklonuj repozytorium:
+
 ```bash
 git clone https://github.com/JakuGo123/voltura-car-catalog.git
 cd voltura-car-catalog
 ```
 
 2. Zainstaluj zależności:
+
 ```bash
 npm install
 ```
@@ -30,18 +33,23 @@ npm install
 ## Uruchomienie projektu
 
 ### Tryb deweloperski
+
 ```bash
 npm run dev
 ```
+
 Aplikacja będzie dostępna pod adresem `http://localhost:5173`
 
 ### Build produkcyjny
+
 ```bash
 npm run build
 ```
+
 Zbudowane pliki znajdą się w katalogu `dist/`
 
 ### Podgląd buildu produkcyjnego
+
 ```bash
 npm run preview
 ```
@@ -70,6 +78,7 @@ data/
 - Filtrowanie po modelach
 - Responsywny design
 - Modal z szczegółowymi informacjami o pojeździe
+- Zapisywanie konfiguracji w localStorage
 
 ---
 
@@ -77,19 +86,14 @@ data/
 
 ### Moje komentarze i przemyślenia
 
-*Tutaj możesz dodać swoje notatki, uwagi dotyczące projektu, rzeczy do poprawy, itp.*
+Nie wszystko zostało przeniesione 1:1 z udostępnionych materiałów, ale starałem się odwzorować design jak najlepiej. Główne zmiany:
 
-**Do zrobienia:**
-- [ ] 
-
-**Znane problemy:**
-- 
-
-**Pomysły na przyszłość:**
-- 
+- **Filtrowanie po modelu** - użyłem dropdown select zamiast pola input (tak sugerował layout) ale jest to mało sensowne z punktu widzenia UX - jeżeli odejmie mi to pkt to my bad
+- **Filtr "Napęd"** - zamiast filtrowania elektryczny/nieelektryczny, filtruję po typie napędu: AWD (napęd na cztery koła), FWD (napęd na przednie koła), RWD (napęd na tylne koła)
+- **Zdjęcia** - w użyłem tylko takich jakie udostępniał layout na figmie
 
 ---
 
 ## Licencja
 
-Projekt stworzony jako zadanie rekrutacyjne dla Voltura.
+Projekt stworzony jako zadanie rekrutacyjne.
