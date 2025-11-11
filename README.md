@@ -1,5 +1,95 @@
-# Vue 3 + TypeScript + Vite
+# Voltura Car Catalog
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Aplikacja webowa do przeglądania i filtrowania katalogu samochodów elektrycznych Voltura.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Technologie
+
+- Vue 3 (Composition API)
+- TypeScript
+- Vite
+- CSS (bez frameworków)
+
+## Wymagania
+
+- Node.js (wersja 16 lub wyższa)
+- npm lub yarn
+
+## Instalacja
+
+1. Sklonuj repozytorium:
+```bash
+git clone https://github.com/JakuGo123/voltura-car-catalog.git
+cd voltura-car-catalog
+```
+
+2. Zainstaluj zależności:
+```bash
+npm install
+```
+
+## Uruchomienie projektu
+
+### Tryb deweloperski
+```bash
+npm run dev
+```
+Aplikacja będzie dostępna pod adresem `http://localhost:5173`
+
+### Build produkcyjny
+```bash
+npm run build
+```
+Zbudowane pliki znajdą się w katalogu `dist/`
+
+### Podgląd buildu produkcyjnego
+```bash
+npm run preview
+```
+
+## Struktura projektu
+
+```
+src/
+├── components/          # Komponenty Vue
+│   ├── navigation/     # Nawigacja
+│   ├── hero_section/   # Sekcja hero
+│   ├── about_section/  # Sekcja "O nas"
+│   ├── content/        # Główna zawartość z katalogiem
+│   ├── bottom_banner/  # Banner dolny
+│   └── footer/         # Stopka
+├── locales/            # Tłumaczenia (i18n)
+├── script/             # Utility scripts
+└── style.css           # Globalne style
+data/
+└── cars.json           # Dane samochodów
+```
+
+## Funkcjonalności
+
+- Przeglądanie katalogu samochodów elektrycznych
+- Filtrowanie po modelach
+- Responsywny design
+- Modal z szczegółowymi informacjami o pojeździe
+
+---
+
+## Notatki deweloperskie
+
+### Moje komentarze i przemyślenia
+
+*Tutaj możesz dodać swoje notatki, uwagi dotyczące projektu, rzeczy do poprawy, itp.*
+
+**Do zrobienia:**
+- [ ] 
+
+**Znane problemy:**
+- 
+
+**Pomysły na przyszłość:**
+- 
+
+---
+
+## Licencja
+
+Projekt stworzony jako zadanie rekrutacyjne dla Voltura.
