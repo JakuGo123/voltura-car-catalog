@@ -8,18 +8,8 @@
 				</div>
 				<div class="modal-body">
 					<div class="row g-4">
-						<!-- Lewa strona - Zdjęcia -->
 						<div class="col-8">
-							<div class="main-image-container rounded-3 overflow-hidden mb-3">
-								<img :src="images[0]" :alt="car.model" class="w-100 h-100 object-fit-cover" />
-							</div>
-							<div class="d-flex justify-content-between">
-								<div v-for="(image, index) in images.slice(1)" :key="index">
-									<div class="thumbnail-container rounded-2 overflow-hidden" @click="swapImage(index + 1)">
-										<img :src="image" :alt="`${car.model} ${index + 2}`" class="w-100 h-100 object-fit-cover" />
-									</div>
-								</div>
-							</div>
+							<ImageGalerry :car="car" />
 						</div>
 						<!-- Prawa strona - Szczegóły -->
 						<div class="col-4">
@@ -33,13 +23,12 @@
 											:key="version"
 											type="button"
 											class="btn flex-fill rounded-3 version-btn"
-											:class="{ active: selectedVersion === version }"
-											@click="selectedVersion = version">
+											:class="{ active: selectedCar.versions[0] === version }"
+											@click="selectVersion(version)">
 											{{ formatVersion(version) }}
 										</button>
 									</div>
 								</div>
-
 								<!-- Kolor -->
 								<div class="mb-1">
 									<label class="form-label small text-muted mb-2">Kolor</label>
@@ -48,10 +37,10 @@
 											v-for="color in car.colors"
 											:key="color.value"
 											class="color-option rounded-3"
-											:class="{ active: selectedColor === color.value }"
+											:class="{ active: selectedCar.colors[0]?.value === color.value }"
 											:style="{ backgroundColor: color.value }"
 											:title="color.name"
-											@click="selectedColor = color.value"></div>
+											@click="selectColor(color)"></div>
 									</div>
 								</div>
 								<!-- Dodatki -->
@@ -123,6 +112,7 @@
 
 <script setup lang="ts">
 import { useModalLogic, type Car } from '../../../script/modalScript';
+import ImageGalerry from '../components/ImageGalerry.vue';
 
 const props = defineProps<{
 	car: Car;
@@ -130,13 +120,11 @@ const props = defineProps<{
 }>();
 
 const {
-	images,
-	selectedVersion,
-	selectedColor,
-	selectedAddons,
-	swapImage,
+	selectedCar,
 	formatPrice,
 	formatVersion,
+	selectVersion,
+	selectColor,
 	toggleAddon,
 	isAddonSelected,
 	saveToLocalStorage,
@@ -144,26 +132,6 @@ const {
 </script>
 
 <style scoped>
-.main-image-container {
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	background: #f5f5f5;
-	cursor: pointer;
-}
-
-.thumbnail-container {
-	width: 100%;
-	aspect-ratio: 5 / 3;
-	background: #f5f5f5;
-	cursor: pointer;
-	border: 2px solid transparent;
-	transition: border-color 0.2s ease;
-}
-
-.thumbnail-container:hover {
-	border-color: #0d6efd;
-}
-
 .config-section {
 	border: 1px solid #e5e7eb;
 }

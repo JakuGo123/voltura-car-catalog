@@ -6,10 +6,9 @@
 				<div class="col-auto d-flex align-items-center gap-2">
 					<label for="typeSelect" class="form-label mb-0 small">Typ</label>
 					<select id="typeSelect" class="form-select form-select-sm" v-model="localFilters.type" @change="emitFilters">
-						<option value="Wszystkie">Wszystkie</option>
-						<option value="sedan">Sedan</option>
-						<option value="suv">SUV</option>
-						<option value="coupe">Coupe</option>
+						<option v-for="(value, key) in CarTypeList" :key="key" :value="value">
+							{{ value }}
+						</option>
 					</select>
 				</div>
 
@@ -21,10 +20,9 @@
 						class="form-select form-select-sm"
 						v-model="localFilters.drive"
 						@change="emitFilters">
-						<option value="Wszystkie">Wszystkie</option>
-						<option value="awd">AWD</option>
-						<option value="fwd">FWD</option>
-						<option value="rwd">RWD</option>
+						<option v-for="(value, key) in DriveTypeList" :key="key" :value="value">
+							{{ value }}
+						</option>
 					</select>
 				</div>
 
@@ -62,6 +60,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import type { FilterOptions } from '../../../script/filterBar';
+import { CarTypeList, DriveTypeList } from '../../../script/car';
 
 const props = defineProps<{
 	filters: FilterOptions;

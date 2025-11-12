@@ -35,5 +35,10 @@
 	},
 	"bottom_banner": {
 		"title": "Postaw na innowację. Postaw na Voltura."
+	},
+	"car_Version": {
+		"BASIC": "Podstawowy",
+		"SPORT": "Sport",
+		"PERFOMANCE": "Performance"
 	}
 }

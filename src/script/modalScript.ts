@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import type { CarType, DriveType } from './car';
 
 interface CarFeatures {
 	acceleration: number;
@@ -13,35 +14,31 @@ export interface Car {
 	id: number;
 	model: string;
 	price: number;
-	type: string;
+	type: CarType;
 	versions: string[];
 	colors: { value: string; name: string }[];
 	additional: string[];
 	features: CarFeatures;
-	drive: string;
+	drive: DriveType;
 	images: string[];
 }
 
 export const useModalLogic = (car: Car) => {
-	// Tworzenie reaktywnej tablicy zdjęć - pierwsze zdjęcie jest główne
+	const selectedCar = ref<Car>({ ...car, additional: [] });
 	const images = ref<string[]>([...car.images]);
-	const selectedVersion = ref(car.versions[0]);
-	const selectedColor = ref(car.colors[0]?.value || '');
-	const selectedAddons = ref<string[]>([]);
 
 	// Funkcja zamieniająca duże zdjęcie z małym
 	const swapImage = (clickedImageIndex: number) => {
 		if (clickedImageIndex >= images.value.length || clickedImageIndex < 0) return;
 
 		// Indeks 0 to duże zdjęcie, clickedImageIndex to indeks klikniętego małego zdjęcia
-		const tempImages = [...images.value];
-		const temp = tempImages[0];
-		const clickedImage = tempImages[clickedImageIndex];
+		const temp = images.value[0];
+		const clickedImage = images.value[clickedImageIndex];
 
 		if (temp && clickedImage) {
-			tempImages[0] = clickedImage;
-			tempImages[clickedImageIndex] = temp;
-			images.value = tempImages;
+			// Bezpośrednia modyfikacja wartości w reaktywnej tablicy
+			images.value[0] = clickedImage;
+			images.value[clickedImageIndex] = temp;
 		}
 	};
 
@@ -58,26 +55,34 @@ export const useModalLogic = (car: Car) => {
 		return versionMap[version] || version;
 	};
 
+	const selectVersion = (version: string) => {
+		selectedCar.value.versions = [version];
+	};
+
+	const selectColor = (color: { value: string; name: string }) => {
+		selectedCar.value.colors = [color];
+	};
+
 	const toggleAddon = (addon: string) => {
-		const index = selectedAddons.value.indexOf(addon);
+		const index = selectedCar.value.additional.indexOf(addon);
 		if (index > -1) {
-			selectedAddons.value.splice(index, 1);
+			selectedCar.value.additional.splice(index, 1);
 		} else {
-			selectedAddons.value.push(addon);
+			selectedCar.value.additional.push(addon);
 		}
 	};
 
 	const isAddonSelected = (addon: string): boolean => {
-		return selectedAddons.value.includes(addon);
+		return selectedCar.value.additional.includes(addon);
 	};
 
 	const saveToLocalStorage = () => {
 		const selectedOptions = {
-			model: car.model,
-			wersja: selectedVersion.value ? formatVersion(selectedVersion.value) : '',
-			kolor: car.colors.find(c => c.value === selectedColor.value)?.name || selectedColor.value,
-			dodatki: selectedAddons.value,
-			cena: car.price,
+			model: selectedCar.value.model,
+			wersja: selectedCar.value.versions[0] ? formatVersion(selectedCar.value.versions[0]) : '',
+			kolor: selectedCar.value.colors[0]?.name || '',
+			dodatki: selectedCar.value.additional,
+			cena: selectedCar.value.price,
 			timestamp: new Date().toISOString(),
 		};
 
@@ -86,13 +91,13 @@ export const useModalLogic = (car: Car) => {
 	};
 
 	return {
+		selectedCar,
 		images,
-		selectedVersion,
-		selectedColor,
-		selectedAddons,
 		swapImage,
 		formatPrice,
 		formatVersion,
+		selectVersion,
+		selectColor,
 		toggleAddon,
 		isAddonSelected,
 		saveToLocalStorage,

@@ -48,15 +48,20 @@
 			"bootCapacity": 380,
 			"warranty": 6
 		},
-		"drive": "AWD",
+		"drive": "RWD",
 		"previewImage": "/cars/VolturaPX.png",
-		"images": ["/cars/VolturaPX.png", "/cars/VolturaImage1.png", "/cars/VolturaImage2.png", "/cars/VolturaImage3.png"]
+		"images": [
+			"/cars/VolturaSXImage0.svg",
+			"/cars/VolturaImage1.svg",
+			"/cars/VolturaImage2.svg",
+			"/cars/VolturaImage3.svg"
+		]
 	},
 	{
 		"id": 3,
 		"model": "Voltura SX 2025",
 		"price": 319900,
-		"type": "Sedan",
+		"type": "SUV",
 		"versions": ["basic", "sport", "performance"],
 		"colors": [
 			{ "value": "#2C3E50", "name": "Butelkowa Zieleń" },
@@ -72,8 +77,13 @@
 			"bootCapacity": 400,
 			"warranty": 8
 		},
-		"drive": "AWD",
+		"drive": "FWD",
 		"previewImage": "/cars/VolturaSX.png",
-		"images": ["/cars/VolturaSX.png", "/cars/VolturaImage1.png", "/cars/VolturaImage2.png", "/cars/VolturaImage3.png"]
+		"images": [
+			"/cars/VolturaPXImage0.svg",
+			"/cars/VolturaImage1.svg",
+			"/cars/VolturaImage2.svg",
+			"/cars/VolturaImage3.svg"
+		]
 	}
 ]

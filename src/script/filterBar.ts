@@ -1,8 +1,9 @@
+import { DriveTypeList, type CarType, type DriveType, CarTypeList } from './car';
 import type { Car } from './modalScript';
 
 export interface FilterOptions {
-	type: string;
-	drive: string;
+	type: CarType | 'Wszystkie';
+	drive: DriveType | 'Wszystkie';
 	priceMin: number | null;
 	priceMax: number | null;
 }
@@ -16,22 +17,15 @@ export const createDefaultFilters = (): FilterOptions => ({
 
 export const filterCars = (cars: Car[], filters: FilterOptions): Car[] => {
 	return cars.filter(car => {
-		// Filtrowanie po typie
-		if (filters.type !== 'Wszystkie' && car.type.toLowerCase() !== filters.type.toLowerCase()) {
+		if (filters.type !== CarTypeList.ALL && car.type !== filters.type) {
 			return false;
 		}
-
-		// Filtrowanie po napędzie
-		if (filters.drive !== 'Wszystkie' && car.drive.toLowerCase() !== filters.drive.toLowerCase()) {
+		if (filters.drive !== DriveTypeList.ALL && car.drive !== filters.drive) {
 			return false;
 		}
-
-		// Filtrowanie po cenie minimalnej
 		if (filters.priceMin !== null && car.price < filters.priceMin) {
 			return false;
 		}
-
-		// Filtrowanie po cenie maksymalnej
 		if (filters.priceMax !== null && car.price > filters.priceMax) {
 			return false;
 		}
